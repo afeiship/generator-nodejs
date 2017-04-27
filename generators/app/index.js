@@ -1,11 +1,11 @@
 'use strict';
-var yeoman = require('yeoman-generator');
 var chalk = require('chalk');
 var yosay = require('yosay');
 var yoHelper = require('yeoman-generator-helper');
+var Generator = require('yeoman-generator');
 
-module.exports = yeoman.Base.extend({
-  prompting: function () {
+module.exports = class extends Generator {
+  prompting(){
     // Have Yeoman greet the user.
     this.log(yosay(
       'Welcome to the striking ' + chalk.red('generator-fei-nodejs') + ' generator!'
@@ -26,20 +26,21 @@ module.exports = yeoman.Base.extend({
       // To access props later use this.props.someAnswer;
       this.props = props;
     }.bind(this));
-  },
+  }
 
-  writing: function () {
+  writing () {
     this._writingTplFiles();
-  },
+  }
 
-  _writingTplFiles: function() {
+  _writingTplFiles () {
     this.fs.copyTpl(
       this.templatePath('{.*,*,src/*}'),
       this.destinationPath('.'),
       this.props
     );
-  },
-  install: function () {
+  }
+
+  install () {
     console.log('Use `yarn install`');
   }
-});
+};
