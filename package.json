@@ -34,11 +34,6 @@
   "jest": {
     "testEnvironment": "node"
   },
-  "scripts": {
-    "prepublish": "nsp check",
-    "pretest": "eslint . --fix",
-    "test": "jest"
-  },
   "eslintConfig": {
     "extends": "xo-space",
     "env": {
