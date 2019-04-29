@@ -1,10 +1,10 @@
 {
-  "name": "generator-fei-nodejs-runtime",
+  "name": "generator-nodejs",
   "version": "0.0.0",
   "description": "Yeoman generator for runtime nodejs base file.",
-  "homepage": "https://github.com/afeiship/generator-fei-nodejs-runtime",
+  "homepage": "https://github.com/afeiship/generator-nodejs",
   "author": {
-    "name": "afeiship",
+    "name": "afei",
     "email": "1290657123@qq.com",
     "url": "https://github.com/afeiship"
   },
@@ -14,33 +14,58 @@
   "main": "generators/index.js",
   "keywords": [
     "nodejs",
+    "yeoman",
     "yeoman-generator"
   ],
   "devDependencies": {
-    "yeoman-test": "^1.6.0",
-    "yeoman-assert": "^3.0.0",
-    "nsp": "^2.6.3",
-    "eslint": "^3.18.0",
-    "eslint-config-xo-space": "^0.16.0",
-    "jest": "^19.0.2",
-    "jest-cli": "^19.0.1",
-    "yeoman-generator-helper": "github:afeiship/yeoman-generator-helper"
+    "prettier": "^1.17.0",
+    "yeoman-assert": "^3.1.0",
+    "yeoman-test": "^1.7.0"
+  },
+  "engines": {
+    "npm": ">= 4.0.0"
   },
   "dependencies": {
-    "yeoman-generator": "^1.0.0",
-    "chalk": "^1.1.3",
-    "yosay": "^2.0.0"
+    "chalk": "^2.1.0",
+    "replace-in-file": "^4.0.0",
+    "yeoman-generator": "^2.0.1",
+    "yeoman-generator-helper": "github:afeiship/yeoman-generator-helper",
+    "yeoman-remote": "^1.0.1",
+    "yosay": "^2.0.1"
   },
   "jest": {
     "testEnvironment": "node"
   },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*.json": [
+      "prettier --write",
+      "git add"
+    ]
+  },
   "eslintConfig": {
-    "extends": "xo-space",
+    "extends": [
+      "xo",
+      "prettier"
+    ],
     "env": {
       "jest": true,
       "node": true
-    }
+    },
+    "rules": {
+      "prettier/prettier": "error"
+    },
+    "plugins": [
+      "prettier"
+    ]
   },
-  "repository": "git@github.com:afeiship/generator-fei-nodejs-runtime.git",
+  "scripts": {
+    "pretest": "eslint .",
+    "test": "jest"
+  },
+  "repository": "git@github.com:afeiship/generator-nodejs.git",
   "license": "MIT"
 }
