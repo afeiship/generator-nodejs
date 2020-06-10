@@ -21,6 +21,12 @@ module.exports = class extends Generator {
 
     const prompts = [
       {
+        type: "input",
+        name: "scope",
+        message: "Your project_name scope (eg: `@babel(scope is babel)`)?",
+        default: 'feizheng'
+      },
+      {
         type: 'input',
         name: 'project_name',
         message: 'Your project_name (eg: like this `the-node-project` )?',
@@ -34,7 +40,7 @@ module.exports = class extends Generator {
     ];
 
     return this.prompt(prompts).then(
-      function(props) {
+      function (props) {
         // To access props later use this.props.someAnswer;
         this.props = props;
         yoHelper.rewriteProps(props);
@@ -47,7 +53,7 @@ module.exports = class extends Generator {
     remote(
       'afeiship',
       'boilerplate-nodejs',
-      function(err, cachePath) {
+      function (err, cachePath) {
         // copy files:
         this.fs.copy(
           glob.sync(resolve(cachePath, '{**,.*}')),
@@ -59,16 +65,17 @@ module.exports = class extends Generator {
   }
 
   end() {
-    const { project_name, description } = this.props;
+    const { scope, project_name, description } = this.props;
     const files = glob.sync(resolve(this.destinationPath(), '{**,.*}'));
 
     replace.sync({
       files,
       from: [
+        /boilerplate-scope/g,
         /boilerplate-nodejs-description/g,
         /boilerplate-nodejs/g,
       ],
-      to: [description,  project_name]
+      to: [scope, description, project_name]
     });
   }
 };

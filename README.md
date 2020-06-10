@@ -5,11 +5,11 @@
 ```shell
 git clone git@github.com:afeiship/generator-nodejs.git
 cd generator-nodejs
-npm install --registry=https://registry.npm.taobao.org
+npm install
 npm link
 ```
 
 ## usage
 ```shell
-yo nodejs
+yo @feizheng/nodejs
 ```
