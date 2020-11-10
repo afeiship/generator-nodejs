@@ -1,5 +1,5 @@
 {
-  "name": "@feizheng/generator-nodejs",
+  "name": "@jswork/generator-nodejs",
   "version": "1.0.0",
   "description": "Yeoman generator for runtime nodejs base file.",
   "homepage": "https://github.com/afeiship/generator-nodejs",
@@ -13,9 +13,11 @@
   ],
   "main": "generators/index.js",
   "keywords": [
+    "generator",
     "nodejs",
+    "runtime",
     "yeoman",
-    "yeoman-generator"
+    "yo"
   ],
   "devDependencies": {
     "prettier": "^1.17.0",
