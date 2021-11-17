@@ -11,5 +11,5 @@ npm link
 
 ## usage
 ```shell
-yo @feizheng/nodejs
+yo @jswork/nodejs
 ```
