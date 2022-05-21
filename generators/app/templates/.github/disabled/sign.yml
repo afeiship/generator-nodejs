@@ -1,0 +1,28 @@
+name: 'sign'
+
+# 8:00: 0 + 8
+# 每天 8:00 准时执行任务
+on:
+  push:
+  schedule:
+    - cron: '0 22 * * *'
+
+# 设置 bark_key 用于通知
+env:
+  BARK_SDK_KEY: ${{ secrets.BARK_SDK_KEY }}
+
+jobs:
+  bot:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Checkout codes'
+        uses: actions/checkout@v1
+        with:
+          fetch-depth: 1
+      - name: 'Setup nodejs'
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+          registry-url: https://registry.npmjs.org/
+      - run: npm install
+      - run: npm run start
