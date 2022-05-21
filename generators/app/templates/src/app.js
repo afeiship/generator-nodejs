@@ -1,4 +1,4 @@
-import "@/setup";
+import '@/setup';
 
 const { conf, args } = nx.$global;
 
@@ -9,9 +9,7 @@ class App {
   }
 }
 
-
 (async () => {
   const app = new App();
   await app.start();
 })();
-
