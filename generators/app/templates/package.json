@@ -1,0 +1,33 @@
+{
+  "name": "@<%= scope %>/<%= project_name %>",
+  "version": "1.0.0",
+  "private": true,
+  "description": "<%= description %>",
+  "homepage": "https://js.work",
+  "author": {
+    "name": "afei",
+    "email": "1290657123@qq.com"
+  },
+  "scripts": {
+    "start": "babel-node src/app.js",
+    "start-with-args": "babel-node src/app.js --name=nodejsapp"
+  },
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/node": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "babel-plugin-module-resolver": "^4.1.0",
+    "prettier": "^2.5.1"
+  },
+  "dependencies": {
+    "@jswork/next": "^1.0.4",
+    "@jswork/next-fetch": "^1.1.2",
+    "@jswork/next-global": "^1.0.0",
+    "@jswork/next-require": "^1.0.3",
+    "@jswork/next-yaml-configuration": "^1.0.1",
+    "node-fetch": "^2.6.1",
+    "yargs-parser": "^20.2.7"
+  }
+}
