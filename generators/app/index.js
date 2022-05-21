@@ -1,7 +1,7 @@
 'use strict';
 const Generator = require('@jswork/yeoman-generator');
 const getp = require('@jswork/generator-prompts');
-const prompts = getp(['scope', 'registry', 'project_name', 'description']);
+const prompts = getp(['registry', 'project_name', 'description']);
 
 module.exports = class extends Generator {
   async prompting() {
