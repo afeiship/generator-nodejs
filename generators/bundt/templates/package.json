@@ -1,0 +1,27 @@
+{
+  "name": "@<%= scope %>/<%= project_name %>",
+  "private": true,
+  "description": "<%= description %>",
+  "version": "1.0.0",
+  "homepage": "https://js.work",
+  "module": "dist/index.esm.js",
+  "unpkg": "dist/index.min.js",
+  "main": "dist/index.js",
+  "types": "index.d.ts",
+  "author": {
+    "name": "afeiship",
+    "email": "1290657123@qq.com"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "bundt": "^1.1.5",
+    "prettier": "^2.6.2"
+  },
+  "scripts": {
+    "build": "bundt"
+  },
+  "publishConfig": {
+    "access": "<%= registry.access %>",
+    "registry": "<%= registry.publish %>"
+  }
+}
